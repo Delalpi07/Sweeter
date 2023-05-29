@@ -5,6 +5,11 @@ import hashlib
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta
+from os.path import join, dirname
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
 
 
 app = Flask(__name__)
@@ -16,7 +21,6 @@ SECRET_KEY = "SPARTA"
 MONGODB_CONNECTION_STRING = "mongodb+srv://test:sparta@cluster0.arnmzf6.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(MONGODB_CONNECTION_STRING)
 db = client.dbsparta_plus_week4
-
 
 @app.route("/")
 def home():
